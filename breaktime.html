@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTTTIME</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            /* border: 1px red solid; */
+            height: 80dvh;
+          }
+          h1 {
+            color: #333;
+          }
+          .spinning_logo{
+          /* border: 1px black solid; */
+          border-radius: 16px;
+          width: 300px;
+          height: 300px;
+          padding: 12px;
+          margin: 0 auto;
+        }
+        .spinning_logo img{
+          width: 100%;
+          height: 100%;
+        }
+        #broken{
+          display: none;
+        }
+        @media screen and (max-width: 400px) {
+          .spinning_logo {
+            width: 200px;
+            height: 200px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Coming Soon</h1>
+    <p>Something cool is coming to TTTTIME.</p> -->
+
+    <div class="spinning_logo">
+      <div id="lockContainer">
+        <img id="locked" src="clock-locked.jpg">
+        <img id="broken" src="clock-broken.jpg">
+      </div>
+    </div>
+
+    <!-- <p>Coming Soon</p> -->
+
+</body>
+</html>
+
+<script>
+  locked = document.getElementById("locked");
+  broken = document.getElementById("broken");
+  container = document.getElementById("lockContainer");
+  lockedBool = true;
+
+
+  container.addEventListener("click", toggleNewRepFields);
+
+  function toggleNewRepFields() {
+    if (lockedBool) {
+      locked.style.display = "none";
+      broken.style.display = "block";
+      lockedBool = false;
+    } else {
+      locked.style.display = "block";
+      broken.style.display = "none";
+      lockedBool = true;
+    }
+  }
+</script>
